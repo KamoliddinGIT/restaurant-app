@@ -4,7 +4,20 @@ import { StyleSheet, Text, View } from "react-native";
 import MealList from "./Components/MealList";
 
 export default function App() {
-  return <MealList />;
+  const [meals, setMeals] = useState([]);
+
+  useEffect(() => {
+    fetch("https://restoranapp-production.up.railway.app/meals")
+      .then((res) => res.json())
+      .then((data) => setMeals(data));
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <MealList />
+      <StatusBar style="dark" />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

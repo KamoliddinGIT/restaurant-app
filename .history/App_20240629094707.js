@@ -1,10 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import MealList from "./Components/MealList";
 
 export default function App() {
-  return <MealList />;
+  const [meals, setMeals] = useState([]);
+  return (
+    <View style={styles.container}>
+      <Text>Hello World!</Text>
+      <StatusBar style="dark" />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -4,6 +4,14 @@ import { StyleSheet, Text, View } from "react-native";
 import MealList from "./Components/MealList";
 
 export default function App() {
+  const [meals, setMeals] = useState([]);
+
+  useEffect(() => {
+    fetch("https://restoranapp-production.up.railway.app/meals")
+      .then((res) => res.json())
+      .then((data) => setMeals(data));
+  }, []);
+
   return <MealList />;
 }
 

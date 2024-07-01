@@ -4,7 +4,9 @@ import { StyleSheet, Text, View } from "react-native";
 import MealList from "./Components/MealList";
 
 export default function App() {
-  return <MealList />;
+  
+
+  return <MealList meals={meals} />;
 }
 
 const styles = StyleSheet.create({
